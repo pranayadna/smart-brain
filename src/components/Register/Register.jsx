@@ -38,6 +38,7 @@ class Register extends Component {
             this.props.loadUser(user)
             this.props.onRouteChange('home')
         })
+        .catch(console.log)
     }
 
     render(){

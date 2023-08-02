@@ -34,6 +34,7 @@ class SignIn extends Component {
                 this.props.onRouteChange('home')
             }
         })
+        .catch(console.log)
     }
 
     render(){
