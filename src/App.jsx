@@ -53,7 +53,7 @@ class App extends Component {
 
     onPictureSubmit = () => {
         this.setState({ imageUrl: this.state.input })
-            fetch('http://smart-brain-api-production-20b3.up.railway.app/imageUrl', {
+            fetch('https://smart-brain-api-production-20b3.up.railway.app/imageUrl', {
                 method: 'post',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
@@ -63,7 +63,7 @@ class App extends Component {
             .then(response => response.json())
             .then(response => {
                 if (response) {
-                    fetch('http://smart-brain-api-production-20b3.up.railway.app/image', {
+                    fetch('https://smart-brain-api-production-20b3.up.railway.app/image', {
                         method: 'put',
                         headers: {'Content-Type': 'application/json'},
                         body: JSON.stringify({
