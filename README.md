@@ -1,4 +1,4 @@
-# smart-brain
+# SmartBrain
 Face detection web application - React
 
 1. Clone this repo
