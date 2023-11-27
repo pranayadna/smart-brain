@@ -19,7 +19,7 @@ class SignIn extends Component {
     }
 
     onSubmitSignIn = () => {
-        fetch('https://smart-brain-44l31uyhd-prana-afifs-projects.vercel.app/signin', {
+        fetch('https://smart-brain-api-eta.vercel.app/signin', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

@@ -24,7 +24,7 @@ class Register extends Component {
     }
 
     onSubmitSignIn = () => {
-        fetch('https://smart-brain-44l31uyhd-prana-afifs-projects.vercel.app/register', {
+        fetch('https://smart-brain-api-eta.vercel.app/register', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

@@ -53,7 +53,7 @@ class App extends Component {
 
     onPictureSubmit = () => {
         this.setState({ imageUrl: this.state.input })
-        fetch('https://smart-brain-44l31uyhd-prana-afifs-projects.vercel.app/imageUrl', {
+        fetch('https://smart-brain-api-eta.vercel.app/imageUrl', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -63,7 +63,7 @@ class App extends Component {
             .then(response => response.json())
             .then(response => {
                 if (response) {
-                    fetch('https://smart-brain-44l31uyhd-prana-afifs-projects.vercel.app/image', {
+                    fetch('https://smart-brain-api-eta.vercel.app/image', {
                         method: 'put',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
