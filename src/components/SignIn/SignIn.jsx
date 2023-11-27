@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import "./SignIn.css"
 
 class SignIn extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             signInEmail: '',
@@ -13,13 +13,13 @@ class SignIn extends Component {
     onEmailChange = (event) => {
         this.setState({ signInEmail: event.target.value })
     }
-    
+
     onPasswordChange = (event) => {
         this.setState({ signInPassword: event.target.value })
     }
-    
+
     onSubmitSignIn = () => {
-        fetch('https://smart-brain-api-production-20b3.up.railway.app/signin', {
+        fetch('https://smart-brain-44l31uyhd-prana-afifs-projects.vercel.app/signin', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -27,18 +27,18 @@ class SignIn extends Component {
                 password: this.state.signInPassword
             })
         })
-        .then(response => response.json())
-        .then(user => {
-            if (user.id) {
-                this.props.loadUser(user)
-                this.props.onRouteChange('home')
-            }
-        })
-        .catch(console.log)
+            .then(response => response.json())
+            .then(user => {
+                if (user.id) {
+                    this.props.loadUser(user)
+                    this.props.onRouteChange('home')
+                }
+            })
+            .catch(console.log)
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <article className="br3 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
                 <main className="pa4 black-80">
                     <div className="measure">
@@ -46,37 +46,37 @@ class SignIn extends Component {
                             <legend className="f1 fw6 ph0 mh0">Sign In</legend>
                             <div className="mt3">
                                 <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
-                                <input 
-                                    className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
-                                    type="email" 
-                                    name="email-address"  
-                                    id="email-address" 
+                                <input
+                                    className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                                    type="email"
+                                    name="email-address"
+                                    id="email-address"
                                     onChange={this.onEmailChange}
                                 />
                             </div>
                             <div className="mv3">
                                 <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
-                                <input 
-                                    className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
-                                    type="password" 
-                                    name="password"  
-                                    id="password" 
+                                <input
+                                    className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                                    type="password"
+                                    name="password"
+                                    id="password"
                                     onChange={this.onPasswordChange}
                                 />
                             </div>
                             <label className="pa0 ma0 lh-copy f6 pointer"><input type="checkbox" /> Remember me</label>
                         </fieldset>
                         <div className="">
-                            <input 
-                                className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
-                                type="submit" 
+                            <input
+                                className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+                                type="submit"
                                 value="Sign in"
-                                onClick={this.onSubmitSignIn} 
+                                onClick={this.onSubmitSignIn}
                             />
                         </div>
                         <div className="lh-copy mt3">
                             <p
-                                href="#0" 
+                                href="#0"
                                 className="f6 link dim black db pointer"
                                 onClick={() => this.props.onRouteChange('register')}
                             >
